@@ -1,0 +1,2 @@
+ID  name  habitatArea(m2)  coordinates distanceToTheOtherRivers
+1 Scorff  229000 "(6,7,0)"  0
