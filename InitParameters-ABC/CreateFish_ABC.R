@@ -150,7 +150,7 @@ juv=parr=smolt=anadromous_1SW=anadromous_MSW=anadromous_1SW_sea=list()
     pPercF = abs(rnorm(N, sp_pPercFm, sp_pPercFsd)) # mean and sd at population level of individual capacity to store growth into fat reserves
     forkLength = FL(weight,fat,sp_lwa_anadromous,sp_lwb_anadromous,sp_pPercFm) # Fish size
     
-    print_color("\n WARNING: NA in forkLength computation in river parr0+- resampling weight and forkLength ","red")
+    #print_color("\n WARNING: NA in forkLength computation in river parr0+- resampling weight and forkLength ","red")
   }
   
   mature = tolower(runif(N, 0.,1.) < ifelse(female,Matureprob[2],Matureprob[1]) );
@@ -259,7 +259,7 @@ while (any(is.na(forkLength))) {
   pPercF = abs(rnorm(N, sp_pPercFm, sp_pPercFsd)) # mean and sd at population level of individual capacity to store growth into fat reserves
   forkLength = FL(weight,fat,sp_lwa_anadromous,sp_lwb_anadromous,sp_pPercFm) # Fish size
   
-  print_color("\n WARNING: NA in forkLength computation in river parr1+- resampling weight and forkLength ","red")
+  #print_color("\n WARNING: NA in forkLength computation in river parr1+- resampling weight and forkLength ","red")
 }
 
 mature = tolower(runif(N, 0.,1.) < ifelse(female,Matureprob[2],Matureprob[1]) );
@@ -455,7 +455,7 @@ parr[[river]]<-data.frame(
       pPercF = abs(rnorm(N, sp_pPercFm, sp_pPercFsd)) # mean and sd at population level of individual capacity to store growth into fat reserves
       forkLength = FL(weight,fat,sp_lwa_anadromous,sp_lwb_anadromous,sp_pPercFm) # Fish size
       
-      print_color("\n WARNING: NA in forkLength computation of river 1SW- resampling weight and forkLength ","red")
+      #print_color("\n WARNING: NA in forkLength computation of river 1SW- resampling weight and forkLength ","red")
     }
     
     mature = tolower(runif(N, 0.,1.) < Matureprob );
@@ -564,7 +564,7 @@ parr[[river]]<-data.frame(
       pPercF = abs(rnorm(N, sp_pPercFm, sp_pPercFsd)) # mean and sd at population level of individual capacity to store growth into fat reserves
       forkLength = FL(weight,fat,sp_lwa_anadromous,sp_lwb_anadromous,sp_pPercFm) # Fish size
       
-      print_color("\n WARNING: NA in forkLength computation of river MSW - resampling weight and forkLength ","red")
+      #print_color("\n WARNING: NA in forkLength computation of river MSW - resampling weight and forkLength ","red")
     }
     
     mature = tolower(runif(N, 0.,1.) < Matureprob );
@@ -684,7 +684,7 @@ for (searegion in 1:1) {
       pPercF = abs(rnorm(N, sp_pPercFm, sp_pPercFsd)) # mean and sd at population level of individual capacity to store growth into fat reserves
       forkLength = FL(weight,fat,sp_lwa_anadromous,sp_lwb_anadromous,sp_pPercFm) # Fish size
       
-      print_color("\n WARNING: NA in forkLength computation of sea 1SW- resampling weight and forkLength ","red")
+      #print_color("\n WARNING: NA in forkLength computation of sea 1SW- resampling weight and forkLength ","red")
     }
     
     mature = tolower(runif(N, 0.,1.) < Matureprob );
