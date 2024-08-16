@@ -20,7 +20,7 @@ minparams<-c(1,100,0,  #loss fat
              0.9,0.5,0.5,0,   #activityState
              0.9885538, 0.9882199, 0.9992182, 0.994421, 0.9989116,0.9964198,   #sp
              0,40,80,80,80,  #meanTraits
-             4.75,0.00095,3.515).  #trade-off
+             4.75,0.00095,3.515)  #trade-off
 maxparams<-c(2,300,5,  #loss fat
              2,  #NfryMax
              1,0.8,0.8,0.3,   #activityState
@@ -41,7 +41,7 @@ maxparams<-c(2,300,5,  #loss fat
 #---- LHS PACKAGE - CAN augment the design by keeping already sampled values ----#
 library(lhs)
 # Define the number of samples and the number of variables
-n <- 1000      # Number of samples
+n <- 5000      # Number of samples
 k <- 22     # Number of variables
 
 # Generate the LHS sample (values will be between 0 and 1)
