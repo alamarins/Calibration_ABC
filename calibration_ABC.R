@@ -1,14 +1,4 @@
-library(tgp)
-
-# 1b. define parameter space #25% of calibrated values
-minmaxparams<-matrix(c(1,100,0,  1,  0.9,0.5,0.5,0,   
-                       0.9885538, 0.9882199, 0.9992182, 0.994421, 0.9989116,0.9964198,   
-                       0,40,80,80,80,  4.75,0.00095,3.515,
-                       2,300,5,  2,  1,0.8,0.8,0.3,   
-                       0.9896325, 0.9893161, 1, 0.9955241, 0.9994609, 0.9975251,    
-                       1.5,60,90,100,100  ,5.25,0.00105,3.885
-), 22)
-
+#------------ 1. define parameter space -------------#
 input.names<- c("LossFatFem", "LossFatMal", "LossFatPreco",
                 "NFryMax",
                 "activitySummer", "activitySmolt1", "activitySmoltN", "activityWinter",
@@ -16,26 +6,69 @@ input.names<- c("LossFatFem", "LossFatMal", "LossFatPreco",
                 "meanMatThrMalParr", "meanMatThrMalAnad", "meanMatThrFemAnad",
                 "meanSmoltiThrFem","meanSmoltiThrMal",
                 "maxRIV","kappaRIV","sigRIV")
+# minmaxparams<-matrix(c(1,100,0,  1,  0.9,0.5,0.5,0,   
+#                        0.9885538, 0.9882199, 0.9992182, 0.994421, 0.9989116,0.9964198,   
+#                        0,40,80,80,80,  4.75,0.00095,3.515,
+#                        2,300,5,  2,  1,0.8,0.8,0.3,   
+#                        0.9896325, 0.9893161, 1, 0.9955241, 0.9994609, 0.9975251,    
+#                        1.5,60,90,100,100  ,5.25,0.00105,3.885
+# ), 22)
+#rownames(minmaxparams) <- input.names
 
-rownames(minmaxparams) <- input.names
+minparams<-c(1,100,0,  #loss fat
+             1,  #NfryMax
+             0.9,0.5,0.5,0,   #activityState
+             0.9885538, 0.9882199, 0.9992182, 0.994421, 0.9989116,0.9964198,   #sp
+             0,40,80,80,80,  #meanTraits
+             4.75,0.00095,3.515).  #trade-off
+maxparams<-c(2,300,5,  #loss fat
+             2,  #NfryMax
+             1,0.8,0.8,0.3,   #activityState
+             0.9896325, 0.9893161, 1, 0.9955241, 0.9994609, 0.9975251,   #sp 
+             1.5,60,90,100,100  #meanTraits
+             ,5.25,0.00105,3.885)  #trade-off
 
-# 2. Latin hypercube sampling
-matrix_param <- lhs(n=1000, rect=minmaxparams)
 
+#------------ 2. Latin hypercube sampling -------------#
+
+#---- TGP PACKAGE - cannot augment the design by keeping already sampled values ----#
+# library(tgp)
+# set.seed(123)
+# matrix_param <- lhs(n=1, rect=minmaxparams) ## cannot augment the design
+# colnames(matrix_param) <- input.names
+# save(matrix_param,file="calibration_ABC_matrix_param.RData") #the matrix of parameters combinations
+
+#---- LHS PACKAGE - CAN augment the design by keeping already sampled values ----#
+library(lhs)
+# Define the number of samples and the number of variables
+n <- 1000      # Number of samples
+k <- 22     # Number of variables
+
+# Generate the LHS sample (values will be between 0 and 1)
+set.seed(123)
+lhs_sample <- randomLHS(n, k) #uniform 0-1
+
+# --->>> If want to increase the design
+#lhs_sample2 <- augmentLHS(lhs_sample, m = 1)
+
+# Scale the LHS sample to the defined min-max ranges
+scaled_sample <- matrix(NA, nrow=n, ncol=k)
+for (i in 1:k) {
+  scaled_sample[, i] <- lhs_sample[, i] * (maxparams[i] - minparams[i]) + minparams[i]
+}
+matrix_param <- scaled_sample
 colnames(matrix_param) <- input.names
-
 save(matrix_param,file="calibration_ABC_matrix_param.RData") #the matrix of parameters combinations
 
 
-
-#4. need to run model for the n rows of this matrix
+#------------ 4. need to run model for the n rows of this matrix -------------#
 #need to create config AND inventory files for each row
 matrix_param
 ## Run the submit_job.sh for an array of matrix rows
 
 
 
-#5. get output (corresponds to the nrow of the matrix)
+#------------ 5. get output (corresponds to the nrow of the matrix) -------------#
 load("calibration_ABC_matrix_param.RData")
 
 output <- "~/Documents/Capsis/calibration/Scorff/code/forPaperCapsis/CALIBRATION-ABC/output/"
