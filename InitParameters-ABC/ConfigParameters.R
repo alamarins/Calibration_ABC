@@ -35,7 +35,7 @@ sp_aFert = 0.5
 # fat loss after reproduction (female: loose only their eggs; anad males: 59% of FmID; preco males: average reserve for 1+ in november)
 sp_Loss_Fat_Female = matrix_param[row,"LossFatFem"] #1.5 #1
 sp_Loss_Fat_AnadromousMale = matrix_param[row,"LossFatMal"] #200 #73
-sp_Loss_Fat_PrecociousMale = matrix_param[row,"LossFatPreco"] #0 #3
+sp_Loss_Fat_PrecociousMale = matrix_param[row,"LossFatPreco"] #4 #3
 # mortality after reproduction
 sp_ReproMortalityFemale = 0.99
 sp_ReproMortalityMale = 0.999
@@ -73,8 +73,8 @@ sp_DDemergeMax = 920
 #species parameters density effect eggs survival
 # TO CHECK: adjusted on Scorff data (al+mb 07-2020)
 # number of fry / m2
-sp_densityFryMax = matrix_param[row,"NFryMax"] #1 #3.21
-sp_alphaBH = 1
+sp_densityFryMax = 1.7 #1 #3.21
+sp_alphaBH = 0.9 #1
 
 
 
@@ -115,9 +115,9 @@ sp_Wmax = 8500
 
 #species parameters for growth-survival trade-off
 #In river
-sp_maxRIV = matrix_param[row,"maxRIV"] #5 # al+mb 04-2021
-sp_kappaRIV = matrix_param[row,"kappaRIV"] #0.001 # al+mb 04-2021
-sp_sigRIV = matrix_param[row,"sigRIV"] #3.7 # al+mb 04-2021 
+sp_maxRIV = 5 # al+mb 04-2021
+sp_kappaRIV = 0.001 # al+mb 04-2021
+sp_sigRIV = 3.7 # al+mb 04-2021 
 #In sea
 sp_maxSEA = -1 #al-14.11.23 -so pGsea != pGriver #50
 sp_kappaSEA = 0.001 # al+mb 04-2021 
