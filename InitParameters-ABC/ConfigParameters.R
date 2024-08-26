@@ -1,6 +1,6 @@
 ####--------SIMULATION parameters---------####
 # Initial date, e.g. 91 = 1 April (if not a leap year)
-initialYear = 1995
+initialYear = 1985 #1995
 initialDoy = 267#91 # 1st day of autumn / juveniles are created at day 266
 
 #SUMMER_START_DOY = 91; // April 1st
