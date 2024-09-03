@@ -11,7 +11,7 @@ inventoryFileName = paste0("inventory_ABC",row,".txt") #"inventory_Scorff_oneTra
 riverEnvironmentFileName = "riverEnvironment_Scorff_Control.txt"
 seaEnvironmentFileName = "seaEnvironment.txt" #"climat_sea.txt"
 
-numberOfYears = 38 #27
+numberOfYears = 32 #27
 memoDoys = "75, 319"  #"75, 319"
 
 exportAllFish = "false"

@@ -1,6 +1,6 @@
 ####--------SIMULATION parameters---------####
 # Initial date, e.g. 91 = 1 April (if not a leap year)
-initialYear = 1985 #1995
+initialYear = 1990 #1995
 initialDoy = 267#91 # 1st day of autumn / juveniles are created at day 266
 
 #SUMMER_START_DOY = 91; // April 1st
@@ -34,7 +34,7 @@ sp_spawning_nprecociousMaleMean = 5 #10
 sp_aFert = 0.5
 # fat loss after reproduction (female: loose only their eggs; anad males: 59% of FmID; preco males: average reserve for 1+ in november)
 sp_Loss_Fat_Female = matrix_param[row,"LossFatFem"] #1.5 #1
-sp_Loss_Fat_AnadromousMale = matrix_param[row,"LossFatMal"] #200 #73
+sp_Loss_Fat_AnadromousMale = 200 #matrix_param[row,"LossFatMal"] #200 #73
 sp_Loss_Fat_PrecociousMale = matrix_param[row,"LossFatPreco"] #4 #3
 # mortality after reproduction
 sp_ReproMortalityFemale = 0.99
