@@ -104,9 +104,11 @@ sp_pPercFm = 0.12
 sp_pPercFsd = 0.01
 sp_matPercF_females = 0.18
 sp_matPercF_males = 0.04
-sp_lwa_parr = 3.804
+sp_lwa_parr = 3.834098 #3.804
+sp_lwa_smolt = 3.866667 #3.804
 sp_lwa_anadromous = 3.82568
-sp_lwb_parr = 0.32
+sp_lwb_parr = 0.3130335 #0.32
+sp_lwb_smolt = 0.322783 #0.32
 sp_lwb_anadromous = 0.333779
 
 #species parameters sea growth

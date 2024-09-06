@@ -133,8 +133,10 @@ cat(paste0(
   ,"\n sp_matPercF_males =", sp_matPercF_males
   ,"\n"
   ,"\n sp_lwa_parr =", sp_lwa_parr
+  ,"\n sp_lwa_smolt =", sp_lwa_smolt
   ,"\n sp_lwa_anadromous =", sp_lwa_anadromous
   ,"\n sp_lwb_parr =", sp_lwb_parr
+  ,"\n sp_lwb_smolt =", sp_lwb_smolt
   ,"\n sp_lwb_anadromous =", sp_lwb_anadromous
   ,"\n"
   ,"\n //species parameters sea growth"
