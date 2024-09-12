@@ -33,7 +33,7 @@ sp_spawning_nprecociousMaleMean = 5 #10
 # aFert: parameter adjusting competitive advantage due to weight among males
 sp_aFert = 0.5
 # fat loss after reproduction (female: loose only their eggs; anad males: 59% of FmID; preco males: average reserve for 1+ in november)
-sp_Loss_Fat_Female = matrix_param[row,"LossFatFem"] #1.5 #1
+sp_Loss_Fat_Female = 1.5 #matrix_param[row,"LossFatFem"] #1.5 #1
 sp_Loss_Fat_AnadromousMale = 200 #matrix_param[row,"LossFatMal"] #200 #73
 sp_Loss_Fat_PrecociousMale = 4 #matrix_param[row,"LossFatPreco"] #3
 # mortality after reproduction
