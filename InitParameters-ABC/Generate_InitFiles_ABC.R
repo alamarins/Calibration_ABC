@@ -298,16 +298,16 @@ cat(paste0("\n
 # ",ID[6],"\t",fatherID[6],"\t",riverID[6],"\t",order[6],"\t",PropReachesArea[6],"\t",module[6],"\t",length[6],"\t",width[6],"\t",fR_1SW[6],"\t",fR_MSW[6],"\t",coord[6],"
 # "));
 
-reaches <- paste0(ID[1],"\t",fatherID[1],"\t",riverID[1],"\t",order[1],"\t",PropReachesArea[1],"\t",module[1],"\t",length[1],"\t",width[1],"\t",coord[1])
+reaches <- paste0(ID[1],"\t",fatherID[1],"\t",riverID[1],"\t",order[1],"\t",PropReachesArea[1],"\t",module[1],"\t",quality[1],"\t",altitude[1],"\t",length[1],"\t",width[1],"\t",coord[1])
 for(i in 2:(sum(n_reaches))) {
-  reach <- paste0(ID[i],"\t",fatherID[i],"\t",riverID[i],"\t",order[i],"\t",PropReachesArea[i],"\t",module[i],"\t",length[i],"\t",width[i],"\t",coord[i])
+  reach <- paste0(ID[i],"\t",fatherID[i],"\t",riverID[i],"\t",order[i],"\t",PropReachesArea[i],"\t",module[i],"\t",quality[i],"\t",altitude[i],"\t",length[i],"\t",width[i],"\t",coord[i])
   reaches <- paste0(reaches, "\n", reach)
 }
 cat(paste0("\n 
 //\tREACHES
 //data\ttypes
 //int	string	int\tint	int	int	int	Vertex3D
-//ID	fatherID	riverID\torder	habitatArea(m2)\tmodule(m3/s)	length(m)	meanWidth(m)	coordinates
+//ID	fatherID	riverID\torder	habitatArea(m2)\tmodule(m3/s) quality altitude	length(m)	meanWidth(m)	coordinates
 ",reaches,"
 "));
 

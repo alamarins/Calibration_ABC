@@ -12,7 +12,7 @@ riverEnvironmentFileName = "riverEnvironment_Scorff_Control.txt"
 seaEnvironmentFileName = "seaEnvironment.txt" #"climat_sea.txt"
 
 numberOfYears = 32 #27
-memoDoys = "75, 319"  #"75, 319"
+memoDoys = "267"  #"75, 319"
 
 exportAllFish = "false"
 exportSummary = "true"

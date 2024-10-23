@@ -95,6 +95,9 @@ n_allele=2 # biallelic model
   #if(at_sea && (parr || smolt))at_sea=false;
   #if(mature && smolt)mature=false;
 
+reach_probabilities <- rep(0, nrow(ReachesArea))
+accessible_reaches <- which(Weirs$upstreamRate[match(ReachesArea$fatherID, Weirs$ID)] == 1)
+reach_probabilities[accessible_reaches] <- ReachesArea$habitatArea[accessible_reaches] / sum(ReachesArea$habitatArea[accessible_reaches])
 
 juv=parr=smolt=anadromous_1SW=anadromous_MSW=anadromous_1SW_sea=list()
 
@@ -131,10 +134,11 @@ juv=parr=smolt=anadromous_1SW=anadromous_MSW=anadromous_1SW_sea=list()
   #reachId <- sample(2:n_reaches[river],N,1)
   if(n_reaches[river] == 2) {
     reachId <- rep(2,N)
-    birthreachId <- rep(2,N)
+    birthreachId <- reachId
   } else {
-    reachId <- sample(2:n_reaches[river],N,1)
-    birthreachId <- sample(2:n_reaches[river],N,1)
+    #reachId <- sample(2:n_reaches[river],N,replace=T)
+    reachId <- sample(2:n_reaches[river],N,replace=T, prob=reach_probabilities[-1])
+    birthreachId <- reachId
   }
   birthriverId <- river#sample(1:n_rivers,N,1)
   #birthreachId <- sample(2:n_reaches[river],N,1)
@@ -241,10 +245,11 @@ riverId <- river#sample(1:n_river,N_parr0,1)
 #reachId <- sample(2:n_reaches[river],N,1)
 if(n_reaches[river] == 2) {
   reachId <- rep(2,N)
-  birthreachId <- rep(2,N)
+  birthreachId <- reachId
 } else {
-  reachId <- sample(2:n_reaches[river],N,1)
-  birthreachId <- sample(2:n_reaches[river],N,1)
+  #reachId <- sample(2:n_reaches[river],N,replace=T)
+  reachId <- sample(2:n_reaches[river],N,replace=T, prob=reach_probabilities[-1])
+  birthreachId <- reachId
 }
 birthriverId <- river#sample(1:n_rivers,N,1)
 #birthreachId <- sample(2:n_reaches[river],N,1)
@@ -437,10 +442,11 @@ parr[[river]]<-data.frame(
     #reachId <- sample(2:n_reaches[river],N,1)
     if(n_reaches[river] == 2) {
       reachId <- rep(2,N)
-      birthreachId <- rep(2,N)
+      birthreachId <- reachId
     } else {
-      reachId <- sample(2:n_reaches[river],N,1)
-      birthreachId <- sample(2:n_reaches[river],N,1)
+      #reachId <- sample(2:n_reaches[river],N,replace=T)
+      reachId <- sample(2:n_reaches[river],N,replace=T, prob=reach_probabilities[-1])
+      birthreachId <- reachId
     }
     birthriverId <- river#sample(1:n_rivers,N,1)
     #birthreachId <- sample(2:n_reaches[river],N,1)
@@ -546,10 +552,11 @@ parr[[river]]<-data.frame(
     #reachId <- sample(2:n_reaches[river],N,1)
     if(n_reaches[river] == 2) {
       reachId <- rep(2,N)
-      birthreachId <- rep(2,N)
+      birthreachId <- reachId
     } else {
-      reachId <- sample(2:n_reaches[river],N,1)
-      birthreachId <- sample(2:n_reaches[river],N,1)
+      #reachId <- sample(2:n_reaches[river],N,replace=T)
+      reachId <- sample(2:n_reaches[river],N,replace=T, prob=reach_probabilities[-1])
+      birthreachId <- reachId
     }
     birthriverId <- river#sample(1:n_rivers,N,1)
     #birthreachId <- sample(2:n_reaches[river],N,1)
@@ -666,10 +673,11 @@ for (searegion in 1:1) {
     #reachId <- sample(2:n_reaches[river],N,1)
     if(n_reaches[river] == 2) {
       reachId <- rep(2,N)
-      birthreachId <- rep(2,N)
+      birthreachId <- reachId
     } else {
-      reachId <- sample(2:n_reaches[river],N,1)
-      birthreachId <- sample(2:n_reaches[river],N,1)
+      #reachId <- sample(2:n_reaches[river],N,replace=T)
+      reachId <- sample(2:n_reaches[river],N,replace=T, prob=reach_probabilities[-1])
+      birthreachId <- reachId
     }
     birthriverId <- river#sample(1:n_rivers,N,1)
     #birthreachId <- sample(2:n_reaches[river],N,1)
