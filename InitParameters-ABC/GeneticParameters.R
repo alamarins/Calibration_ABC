@@ -18,9 +18,9 @@ nbAllelePerLoc <- GeneticTraits$nbAllele
 alleleEffectMultiplCoeff <- GeneticTraits$alleleEffectMultiplCoeff
 #dominanceEffectMultiplCoeff <- GeneticTraits$dominanceEffectMultiplCoeff
 
-#GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdMaleParr")] <- matrix_param[row,"meanMatThrMalParr"]
-#GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdMaleAnadromous")] <- matrix_param[row,"meanMatThrMalAnad"]
-#GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdFemaleAnadromous")] <- matrix_param[row,"meanMatThrFemAnad"]
+GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdMaleParr")] <- matrix_param[row,"meanMatThrMalParr"]
+GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdMaleAnadromous")] <- matrix_param[row,"meanMatThrMalAnad"]
+GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdFemaleAnadromous")] <- matrix_param[row,"meanMatThrFemAnad"]
 #GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "smoltificationThresholdMale")] <- matrix_param[row,"meanSmoltiThrMal"]
 #GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "smoltificationThresholdFemale")] <- matrix_param[row,"meanSmoltiThrFem"]
 
