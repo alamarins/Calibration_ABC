@@ -131,7 +131,7 @@ sp_sigSEA = 100 # al+mb 04-2021
 #Parameters for daily survival in river (state dependent)
 sp_Sp0 = matrix_param[row,"sp0"] #0.98912  #0.9841606*1.0025
 sp_Sp1M = 0.9863295*1.0025 #matrix_param[row,"sp1M"] #0.9863295*1.0025
-sp_Sp1S = 0.9998 #matrix_param[row,"sp1S"] #0.9998 #0.9967923*1.002
+sp_Sp1S = matrix_param[row,"sp1S"] #0.9998 #0.9967923*1.002
 sp_Sp1 = matrix_param[row,"sp1"] #0.996 #0.995 #0.9962 #0.9914398*1.002
 sp_Spn = 0.9992 #matrix_param[row,"spn"] #0.9992 #0.9998 #0.99775*1.002
 sp_SpnM = 0.997 #matrix_param[row,"spnM"] #0.997 #0.9911798*1.002
