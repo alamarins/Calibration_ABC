@@ -139,7 +139,7 @@ sp_SpOSW = 0.9999713
 sp_SpMSW = 0.9998677
 
 #Parameters for daily survival in sea (size dependent)
-sp_RickA = 2.3 #matrix_param[row,"RickA"] #2.533333
+sp_RickA = matrix_param[row,"RickA"] #2.3 #2.533333
 sp_RickB = -0.524
 
 
