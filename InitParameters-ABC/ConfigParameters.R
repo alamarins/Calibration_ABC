@@ -33,12 +33,12 @@ sp_spawning_nprecociousMaleMean = 5 #10
 # aFert: parameter adjusting competitive advantage due to weight among males
 sp_aFert = 0.5
 # fat loss after reproduction (female: loose only their eggs; anad males: 59% of FmID; preco males: average reserve for 1+ in november)
-sp_Loss_Fat_Female = 1.5 #matrix_param[row,"LossFatFem"] #1.5 #1
+sp_Loss_Fat_Female = 1 #matrix_param[row,"LossFatFem"] #1.5 #1
 sp_Loss_Fat_AnadromousMale = 200 #matrix_param[row,"LossFatMal"] #200 #73
 sp_Loss_Fat_PrecociousMale = 4 #matrix_param[row,"LossFatPreco"] #3
 # mortality after reproduction
-sp_ReproMortalityFemale = 0.99
-sp_ReproMortalityMale = 0.999
+sp_ReproMortalityFemale = matrix_param[row,"ReproMortFem"] #0.99
+sp_ReproMortalityMale = matrix_param[row,"ReproMortMal"] #0.999
 
 
 #species parameters number of eggs produced by female
@@ -73,7 +73,7 @@ sp_DDemergeMax = 920
 #species parameters density effect eggs survival
 # TO CHECK: adjusted on Scorff data (al+mb 07-2020)
 # number of fry / m2
-sp_densityFryMax = 1.7 #1 #3.21
+sp_densityFryMax = matrix_param[row,"NFryMax"] #1.7 #1 #3.21
 sp_alphaBH = 0.9 #1
 
 
@@ -87,10 +87,10 @@ sp_gr = 0.208
 sp_b = 0.31
 
 #species parameters activity effect river growth
-sp_activityState_summer = 0.9081 #matrix_param[row,"activitySummer"] #0.95 #1
-sp_activityState_smolt1 = 0.6865 #matrix_param[row,"activitySmolt1"] #0.65 #0.725
-sp_activityState_smoltN = 0.4679 #matrix_param[row,"activitySmoltN"] #0.7 #0.188
-sp_activityState_winter = 0.2231 #matrix_param[row,"activityWinter"] #0.1 #0.2 #0.1
+sp_activityState_summer = matrix_param[row,"activitySummer"] #0.95 #1
+sp_activityState_smolt1 = matrix_param[row,"activitySmolt1"] #0.65 #0.725
+sp_activityState_smoltN = matrix_param[row,"activitySmoltN"] #0.7 #0.188
+sp_activityState_winter = matrix_param[row,"activityWinter"] #0.1 #0.2 #0.1
 
 #species parameter density effect river growth
 sp_betaDens = 142.7
@@ -129,17 +129,17 @@ sp_sigSEA = 100 # al+mb 04-2021
 
 ## SURVIVAL
 #Parameters for daily survival in river (state dependent)
-sp_Sp0 = 0.9890 #matrix_param[row,"sp0"] #0.98912  #0.9841606*1.0025
+sp_Sp0 = matrix_param[row,"sp0"] #0.98912  #0.9841606*1.0025
 sp_Sp1M = 0.9863295*1.0025 #matrix_param[row,"sp1M"] #0.9863295*1.0025
-sp_Sp1S = 0.9997 #matrix_param[row,"sp1S"] #0.9998 #0.9967923*1.002
-sp_Sp1 = 0.9959 #matrix_param[row,"sp1"] #0.996 #0.995 #0.9962 #0.9914398*1.002
-sp_Spn = matrix_param[row,"spn"] #0.9992 #0.9998 #0.99775*1.002
+sp_Sp1S = matrix_param[row,"sp1S"] #0.9998 #0.9967923*1.002
+sp_Sp1 = matrix_param[row,"sp1"] #0.996 #0.995 #0.9962 #0.9914398*1.002
+sp_Spn = 0.9992 #0.9998 #0.99775*1.002
 sp_SpnM = 0.997 #matrix_param[row,"spnM"] #0.997 #0.9911798*1.002
 sp_SpOSW = 0.9999713
 sp_SpMSW = 0.9998677
 
 #Parameters for daily survival in sea (size dependent)
-sp_RickA = matrix_param[row,"RickA"] #2.3 #2.533333
+sp_RickA = 2.32 #matrix_param[row,"RickA"] #2.3 #2.533333
 sp_RickB = -0.524
 
 

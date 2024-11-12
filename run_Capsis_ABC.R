@@ -8,7 +8,7 @@ setwd("/scratch/project_2008731/alamarins/trunk")
 
 configFileName=paste0("config_ABC",row,".txt") #"config_Scorff.txt"
 inventoryFileName = paste0("inventory_ABC",row,".txt") #"inventory_Scorff_oneTraitMaturation_heri1_matThrMaleParr-0.6.txt" #"inventory_Scorff_oneTraitMaturation_heri1_gG-CV0.15.txt" #"inventory_Scorff_oneTraitMaturation_heri1.txt"
-riverEnvironmentFileName = "riverEnvironment_Scorff_Control.txt"
+riverEnvironmentFileName = "riverEnvironment_Scorff_control_23reaches.txt"
 seaEnvironmentFileName = "seaEnvironment.txt" #"climat_sea.txt"
 
 numberOfYears = 32 #27

@@ -18,11 +18,11 @@ nbAllelePerLoc <- GeneticTraits$nbAllele
 alleleEffectMultiplCoeff <- GeneticTraits$alleleEffectMultiplCoeff
 #dominanceEffectMultiplCoeff <- GeneticTraits$dominanceEffectMultiplCoeff
 
-GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdMaleParr")] <- 0.4805 #matrix_param[row,"meanMatThrMalParr"]
-GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdMaleAnadromous")] <- 45.9667 #matrix_param[row,"meanMatThrMalAnad"]
-GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdFemaleAnadromous")] <- 87.2227 #matrix_param[row,"meanMatThrFemAnad"]
-GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "smoltificationThresholdMale")] <- 89.0086 #matrix_param[row,"meanSmoltiThrMal"]
-GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "smoltificationThresholdFemale")] <- 90.8907 #matrix_param[row,"meanSmoltiThrFem"]
+GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdMaleParr")] <- matrix_param[row,"meanMatThrMalParr"]
+GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdMaleAnadromous")] <- matrix_param[row,"meanMatThrMalAnad"]
+GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "maturationThresholdFemaleAnadromous")] <- matrix_param[row,"meanMatThrFemAnad"]
+GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "smoltificationThresholdMale")] <- matrix_param[row,"meanSmoltiThrMal"]
+GeneticTraits$Mean_value[which(GeneticTraits$ParametersNames == "smoltificationThresholdFemale")] <- matrix_param[row,"meanSmoltiThrFem"]
 
 ############# Locus effect ############
 

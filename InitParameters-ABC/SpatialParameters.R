@@ -4,7 +4,8 @@
 library(readxl)
 library(sf)
 #ReachesArea<-read.table("spatial/Reaches.txt",header = TRUE)
-reaches_Scorff <- read_excel("spatial/reaches_Scorff_single.xlsx")
+#reaches_Scorff <- read_excel("spatial/reaches_Scorff_single.xlsx")
+reaches_Scorff <- read_excel("spatial/reaches_Scorff_22reaches.xlsx")
 
 # Function to convert input string into a list of coordinates
 parse_coordinates <- function(input_string) {
@@ -86,7 +87,8 @@ PropRiversArea <- prop * Rivers$habitatArea.m2.
 ############# WEIRS ############
 
 #Weirs<-read.table("spatial/Weirs.txt",header = TRUE)
-weirs_Scorff <- read_excel("spatial/weirs_Scorff_single.xlsx")
+#weirs_Scorff <- read_excel("spatial/weirs_Scorff_single.xlsx")
+weirs_Scorff <- read_excel("spatial/weirs_Scorff_22reaches.xlsx")
 
 weirs_Scorff$coordinates_UTM <- NA
 # Reach to convert
