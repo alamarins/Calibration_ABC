@@ -9,11 +9,10 @@ initialDoy = 267#91 # 1st day of autumn / juveniles are created at day 266
 
 ####--------LIFE HISTORY parameters---------####
 # fixed time windows for process
-precociousMaturationWindow = c(91,150)
+precociousMaturationWindow = c(91,150) #not used
 seawardMigrationDecisionWindow = c(274,274)
 seawardEffectiveMigrationWindow = c(75,147) #al-11.09.23 #c(80,140) # mb - 16.05.2023
-# Maturation window at sea (47 days starting Oct 1st):
-riverwardMigrationDecisionWindow = c(274,321) # to check see Trehin et aL. 2020
+riverwardMigrationDecisionWindow = c(148,321) #not used
 reproductionWindow = c(320,5)#c(322,5) #c(362,362)
 fishingWindow = c(1,319) #c(90,274)
 
@@ -129,17 +128,17 @@ sp_sigSEA = 100 # al+mb 04-2021
 
 ## SURVIVAL
 #Parameters for daily survival in river (state dependent)
-sp_Sp0 = matrix_param[row,"sp0"] #0.98912  #0.9841606*1.0025
+sp_Sp0 = 0.9891 #matrix_param[row,"sp0"] #0.98912  #0.9841606*1.0025
 sp_Sp1M = 0.9863295*1.0025 #matrix_param[row,"sp1M"] #0.9863295*1.0025
 sp_Sp1S = matrix_param[row,"sp1S"] #0.9998 #0.9967923*1.002
 sp_Sp1 = matrix_param[row,"sp1"] #0.996 #0.995 #0.9962 #0.9914398*1.002
-sp_Spn = 0.9992 #0.9998 #0.99775*1.002
+sp_Spn = 0.9989 #0.9998 #0.99775*1.002
 sp_SpnM = 0.997 #matrix_param[row,"spnM"] #0.997 #0.9911798*1.002
 sp_SpOSW = 0.9999713
 sp_SpMSW = 0.9998677
 
 #Parameters for daily survival in sea (size dependent)
-sp_RickA = 2.32 #matrix_param[row,"RickA"] #2.3 #2.533333
+sp_RickA = 2.3909 #matrix_param[row,"RickA"] #2.3 #2.533333
 sp_RickB = -0.524
 
 
@@ -149,7 +148,8 @@ sp_RickB = -0.524
 sp_nDaysWindowRiverMaturation = 61
 sp_nDaysProjectionRiverMaturation = 122
 #In sea
-sp_nDaysWindowSeaMaturation = 47
+sp_nDaysWindowSeaMaturation = 211 #=(321-110) #47
+sp_nDaysWindowSeaMaturationIteroparous = 316 #=(321-5) #al-06.12.24
 sp_nDaysProjectionSeaMaturation = 135
 
 

@@ -185,6 +185,7 @@ cat(paste0(
   ,"\n sp_nDaysProjectionRiverMaturation =", sp_nDaysProjectionRiverMaturation
   ,"\n //In sea"
   ,"\n sp_nDaysWindowSeaMaturation =", sp_nDaysWindowSeaMaturation
+  ,"\n sp_nDaysWindowSeaMaturationIteroparous =", sp_nDaysWindowSeaMaturationIteroparous
   ,"\n sp_nDaysProjectionSeaMaturation =", sp_nDaysProjectionSeaMaturation
   #, sep=" ")
   ,"\n"));
